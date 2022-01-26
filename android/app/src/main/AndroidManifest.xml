@@ -1,0 +1,38 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ru.eapteka.courier">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".MainApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.transistorsoft.locationmanager.license"
+            android:value="a98ba5e377cb9f0590ca292a06b0690c451c98413af411a98606e13423caaba5" />
+
+
+        <service
+            android:name="com.transistorsoft.locationmanager.service.TrackingService"
+            android:foregroundServiceType="location" />
+
+        <service
+            android:name="com.transistorsoft.locationmanager.service.LocationRequestService"
+            android:foregroundServiceType="location" />
+    </application>
+</manifest>
